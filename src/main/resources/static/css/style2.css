@@ -1,0 +1,59 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* 見出しのスタイル */
+h2, h3 {
+    color: #333;
+}
+
+/* レビュー一覧のスタイル */
+.review-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 星の表示 */
+.stars {
+    font-size: 20px; /* 星のサイズ */
+    color: gold; /* 星の色を金色にする */
+}
+
+/* レビュー投稿フォームのスタイル */
+form {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
