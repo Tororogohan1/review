@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>レビュー一覧</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<h2>レビュー一覧</h2>
+
+<p><a th:href="@{/houses/{houseId}(houseId=${house.id})}">← 宿泊施設詳細へ戻る</a></p>
+
+<ul>
+    <li th:each="review : ${reviews}">
+        <strong th:text="${review.user.username}"></strong>: 
+        <span th:utext="${#strings.repeat('★', review.rating) + #strings.repeat('☆', 5 - review.rating)}"></span>
+        - <span th:text="${review.comment}"></span>
+    </li>
+</ul>
+
+<!-- ページネーション（必要に応じて） -->
+<div th:if="${reviewPage.totalPages > 1}">
+    <span th:each="i : ${#numbers.sequence(0, reviewPage.totalPages - 1)}">
+        <a th:href="@{/reviews/house/{houseId}(houseId=${house.id}, page=${i})}" th:text="${i + 1}"></a>
+    </span>
+</div>
+
+</body>
+</html>
